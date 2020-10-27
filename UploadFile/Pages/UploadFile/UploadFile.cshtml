@@ -11,7 +11,7 @@
 
         <div>
             <label>Select an image file to upload</label>
-            <input type="file" asp-for="FileName" onchange="readURL(this)" accept="image/*"/>
+            <input type="file" asp-for="UserFile" onchange="readURL(this)" accept="image/*" />
         </div>
         <br />
         <div>
@@ -19,3 +19,19 @@
         </div>
     </form>
 </div>
+
+
+<div>
+    <img id="Img" src="" alt="User Picture" style="width: 200px;"/>
+</div>
+
+<script>
+    function readURL(input) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            document.getElementById("Img").setAttribute("src", e.target.result);
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+</script>
