@@ -16,8 +16,8 @@ namespace UploadFile.Pages.DeleteFile
         public void OnGet()
         {
 
-            string path = "~/img/";
-            int countFile = Directory.GetFiles(path, "*", SearchOption.AllDirectories).Length;
+            string path = "/images/";
+            NoFiles = Directory.GetFiles(path, "*", SearchOption.AllDirectories).Length;
             
         }
     }
