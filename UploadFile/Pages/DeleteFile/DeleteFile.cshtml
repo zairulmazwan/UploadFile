@@ -6,3 +6,10 @@
 
 <h1>Delete Student Profile Picture @Model.NoFiles</h1>
 
+<ul>
+    @foreach (var FileName in @Model.FilesList)
+    {
+        <li>@FileName <a asp-route-fileToDelete="@FileName">Delete</a></li>
+    }
+</ul>
+
